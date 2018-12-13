@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  reconnect: false
+  host: localhost
+  port: 5432
+  username: wildan
+  password: 'clarence'
+
+development:
+  <<: *default
+  database: ignite_development
+  pool: 5
+
+test:
+  <<: *default
+  database: ignite_test
+  pool: 5
