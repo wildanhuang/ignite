@@ -6,3 +6,7 @@
   <hr class="my-4">
   <p>Lets Make an Impact.</p>
 </div>
+
+<% if can? :manage, User %>
+  <%= @text %>
+<% end %>
