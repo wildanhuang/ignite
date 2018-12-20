@@ -1,0 +1,2 @@
+class SpiritCharge < ApplicationRecord
+end

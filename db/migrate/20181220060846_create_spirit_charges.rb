@@ -1,0 +1,10 @@
+class CreateSpiritCharges < ActiveRecord::Migration[5.2]
+  def change
+    create_table :spirit_charges do |t|
+      t.string  :title
+      t.text    :description
+
+      t.timestamps
+    end
+  end
+end

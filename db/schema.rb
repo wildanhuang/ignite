@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_11_074120) do
+ActiveRecord::Schema.define(version: 2018_12_20_060906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "readings", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "spirit_charge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spirit_charge_id"], name: "index_readings_on_spirit_charge_id"
+    t.index ["user_id"], name: "index_readings_on_user_id"
+  end
+
+  create_table "spirit_charges", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
