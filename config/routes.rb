@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root to: "dashboards#index"
 
   resources :dashboards
+  resources :spirit_charges
 end
