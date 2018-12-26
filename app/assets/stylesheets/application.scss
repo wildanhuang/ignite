@@ -16,3 +16,13 @@
 
  /* Custom bootstrap variables must be set or imported *before* bootstrap. */
 @import "bootstrap";
+
+.bg-bible {
+  background-image: image-url('bible.jpg');
+  background-size: 100% auto;
+  background-position: center 85%;
+}
+
+.white {
+  color: white;
+}
