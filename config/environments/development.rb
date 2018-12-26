@@ -68,7 +68,6 @@ Rails.application.configure do
     authentication:       Rails.application.secrets.smtp_authentication,
     user_name:            Rails.application.secrets.smtp_username,
     password:             Rails.application.secrets.smtp_password,
-    domain:               Rails.application.secrets.domain,
-    tls: true
+    domain:               Rails.application.secrets.domain
   }
 end
