@@ -4,7 +4,6 @@ class MyMailer < Devise::Mailer
   default template_path: 'devise/mailer' # to make sure that your mailer uses the devise views
 
   def confirmation_instructions(record, token, opts={})
-    headers["Custom-header"] = "Bar"
     opts[:from] = 'admin@ignite.com'
     opts[:reply_to] = 'wildanhuang@gmail.com'
     opts[:to] = 'wildanhuang@gmail.com'
