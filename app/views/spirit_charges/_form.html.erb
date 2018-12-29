@@ -1,5 +1,11 @@
 <%= form_for spirit_charge, url: url, method: method, :html => {:class => "form-horizontal"} do |f| %>
+  <% if f.object.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <%= f.object.errors.full_messages.join(", ") %>
+    </div>
+  <% end %>
 
+  <div class="clearfix"></div>
   <div class="form-group">
     <label for="title">Title</label>
     <%= f.text_field :title, :class => "form-control", placeholder: 'Write your title here' %>

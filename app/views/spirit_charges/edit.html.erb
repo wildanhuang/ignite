@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h3 class="portlet-title text-dark text-uppercase">Create New Spirit</h3>
+      <h3 class="portlet-title text-dark text-uppercase">Edit Spirit</h3>
     </div>
   </div>
   <div class="row">
     <div class="col-6">
-      <%= render partial: 'form', locals: {spirit_charge: @spirit_charge, url: spirit_charges_path, method: :post} %>
+      <%= render partial: 'form', locals: {spirit_charge: @spirit_charge, url: spirit_charge_path, method: :patch} %>
     </div>
     <div class="col-6">
       <!-- coming soon -->
