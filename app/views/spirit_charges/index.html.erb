@@ -33,6 +33,9 @@
           <td><%= spirit.description %></td>
           <td>
             <!-- Some actions here -->
+            <%= link_to edit_spirit_charge_path(spirit) do %>
+              <i class="fas fa-edit"></i>
+            <% end %>
           </td>
         </tr>
       <% end %>

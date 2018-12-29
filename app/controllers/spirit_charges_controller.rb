@@ -1,4 +1,5 @@
 class SpiritChargesController < ApplicationController
+  before_action :set_spirit_charge, only: [:edit, :update, :destroy]
 
   def index
     @spirit_charges = SpiritCharge.all.order(created_at: :asc)
@@ -9,7 +10,6 @@ class SpiritChargesController < ApplicationController
   end
 
   def edit
-    @spirit_charge = SpiritCharge.find(params[:id])
   end
 
   def create
@@ -23,6 +23,11 @@ class SpiritChargesController < ApplicationController
   end
 
   def update
+    if @spirit_charge.update_attributes(spirit_charge_params)
+      redirect_to spirit_charges_path, :flash => { :success => "Successfully update spirit" }
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -31,5 +36,9 @@ class SpiritChargesController < ApplicationController
   private
     def spirit_charge_params
       params.require(:spirit_charge).permit(:title, :description)
+    end
+
+    def set_spirit_charge
+      @spirit_charge = SpiritCharge.find params[:id]
     end
 end
