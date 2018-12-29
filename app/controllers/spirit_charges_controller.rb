@@ -35,6 +35,13 @@ class SpiritChargesController < ApplicationController
     redirect_to spirit_charges_path, :flash => { :success => "Successfully delete spirit" }
   end
 
+  def read
+    spirit_charge = SpiritCharge.find params[:spirit_charge_id]
+    current_user.readings.create(spirit_charge_id: spirit_charge.id)
+
+    redirect_to spirit_charges_path, :flash => { :success => "Successfully Read: #{spirit_charge.title}" }
+  end
+
   private
     def spirit_charge_params
       params.require(:spirit_charge).permit(:title, :description)

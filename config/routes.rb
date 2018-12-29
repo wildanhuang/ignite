@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   root to: "dashboards#index"
 
   resources :dashboards
-  resources :spirit_charges
+  resources :spirit_charges do
+    collection do
+        get :read
+      end
+  end
 end

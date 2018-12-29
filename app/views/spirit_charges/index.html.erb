@@ -27,12 +27,17 @@
   <tbody>
     <% if can? :read, SpiritCharge %>
       <% @spirit_charges.each_with_index do |spirit, index| %>
+      <% next if current_user.readings.map(&:spirit_charge_id).include?(spirit.id) %>
         <tr>
           <th scope="row"><%= index + 1 %></th>
           <td><%= spirit.title %></td>
           <td><%= spirit.description %></td>
           <td>
             <!-- Some actions here -->
+            <%= link_to read_spirit_charges_path(spirit_charge_id: spirit) do %>
+              <i class="fas fa-calendar-check" style="color: lime"></i>
+            <% end %>
+
             <% if can? :manage, SpiritCharge %>
               <%= link_to edit_spirit_charge_path(spirit) do %>
                 <i class="fas fa-edit"></i>
