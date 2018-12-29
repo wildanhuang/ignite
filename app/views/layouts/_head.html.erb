@@ -1,3 +1,9 @@
+<script type="javascript">
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
 <% if current_user %>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <%= link_to '/' do %><%= image_tag 'logo.png', width: '100', height: '100' %><% end %>

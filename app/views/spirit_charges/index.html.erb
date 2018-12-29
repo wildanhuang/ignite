@@ -34,10 +34,7 @@
           <td><%= spirit.description %></td>
           <td>
             <!-- Some actions here -->
-            <%= link_to read_spirit_charges_path(spirit_charge_id: spirit) do %>
-              <i class="fas fa-calendar-check" style="color: lime"></i>
-            <% end %>
-
+            <%= link_to "<small>Read</small> <i class='fas fa-calendar-check' style='color: lime'></i>".html_safe, read_spirit_charges_path(spirit_charge_id: spirit), style: 'text-decoration: none; color: lime;' %>
             <% if can? :manage, SpiritCharge %>
               <%= link_to edit_spirit_charge_path(spirit) do %>
                 <i class="fas fa-edit"></i>
