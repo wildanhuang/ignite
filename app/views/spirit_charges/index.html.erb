@@ -33,8 +33,13 @@
           <td><%= spirit.description %></td>
           <td>
             <!-- Some actions here -->
-            <%= link_to edit_spirit_charge_path(spirit) do %>
-              <i class="fas fa-edit"></i>
+            <% if can? :manage, SpiritCharge %>
+              <%= link_to edit_spirit_charge_path(spirit) do %>
+                <i class="fas fa-edit"></i>
+              <% end %>
+              <%= link_to spirit_charge_path(spirit), method: :delete, :data => { :title => 'Deleting Spirit', :confirm => 'Are you sure want to delete spirit?' } do %>
+                <i class="fas fa-trash-alt" style="color: red"></i>
+              <% end %>
             <% end %>
           </td>
         </tr>

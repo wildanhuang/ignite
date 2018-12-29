@@ -31,6 +31,8 @@ class SpiritChargesController < ApplicationController
   end
 
   def destroy
+    @spirit_charge.destroy
+    redirect_to spirit_charges_path, :flash => { :success => "Successfully delete spirit" }
   end
 
   private
