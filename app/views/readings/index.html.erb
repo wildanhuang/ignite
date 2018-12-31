@@ -1,0 +1,36 @@
+<h1 class="display-4">
+  My Readings
+</h1>
+<div class="jumbotron bg-bible">
+  <h1 class="display-4">
+    &nbsp;
+  </h1>
+  <p class="lead">
+    &nbsp;
+  </p>
+  <p>&nbsp;</p>
+</div>
+
+<p>
+  Yosua 1:8 (TB)<br/>
+  Janganlah engkau lupa memperkatakan kitab Taurat ini, tetapi renungkanlah itu siang dan malam, supaya engkau bertindak hati-hati sesuai dengan segala yang tertulis di dalamnya, sebab dengan demikian perjalananmu akan berhasil dan engkau akan beruntung.
+</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if can? :read,Reading %>
+      <% @readings.each_with_index do |read, index| %>
+        <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= read.spirit_charge.title %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

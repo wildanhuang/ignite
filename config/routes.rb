@@ -10,4 +10,5 @@ Rails.application.routes.draw do
         get :read
       end
   end
+  resources :readings
 end
