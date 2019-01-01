@@ -1,3 +1,28 @@
-<h1>
-  Coming Soon!
-</h1>
+<div class="jumbotron white" style="background-color: red">
+  <h1 class="display-4">
+    Coming Soon! - Still in development
+  </h1>
+  <p class="lead">
+    &nbsp;
+  </p>
+  <p>&nbsp;</p>
+</div>
+
+<div class="card" style="width: 18rem; margin-top: -175px; margin-left: 50px;">
+  <img class="card-img-top" src="assets/ignite.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><%= current_user.firstname.present? ? current_user.firstname : "First Name" %></h5>
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of the card's content.
+    </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
