@@ -37,9 +37,13 @@ class SpiritChargesController < ApplicationController
 
   def read
     spirit_charge = SpiritCharge.find params[:spirit_charge_id]
-    current_user.readings.create(spirit_charge_id: spirit_charge.id)
+    reading = current_user.readings.create(spirit_charge_id: spirit_charge.id)
 
-    redirect_to spirit_charges_path, :flash => { :success => "Successfully Read: #{spirit_charge.title}" }
+    if reading.errors.present?
+      redirect_to spirit_charges_path, :flash => { :error => reading.errors.messages[:spirit_charge_id].last }
+    else
+      redirect_to spirit_charges_path, :flash => { :success => "Successfully Read: #{spirit_charge.title}" }
+    end
   end
 
   private

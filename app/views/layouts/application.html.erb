@@ -19,6 +19,10 @@
         <div class="alert alert-success" role="alert">
           <%= flash[:success] %>
         </div>
+      <% elsif flash[:error].present? %>
+        <div class="alert alert-danger" role="alert">
+          <%= flash[:error] %>
+        </div>
       <% end %>
       <!-- Content here -->
       <%= yield %>
