@@ -24,6 +24,7 @@
   Janganlah engkau lupa memperkatakan kitab Taurat ini, tetapi renungkanlah itu siang dan malam, supaya engkau bertindak hati-hati sesuai dengan segala yang tertulis di dalamnya, sebab dengan demikian perjalananmu akan berhasil dan engkau akan beruntung.
 </p>
 
+<%= paginate @spirit_charges %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -36,9 +37,9 @@
   <tbody>
     <% if can? :read, SpiritCharge %>
       <% @spirit_charges.each_with_index do |spirit, index| %>
-      <% next if current_user.readings.map(&:spirit_charge_id).include?(spirit.id) %>
+      <% #next if current_user.readings.map(&:spirit_charge_id).include?(spirit.id) %>
         <tr>
-          <th scope="row"><%= index + 1 %></th>
+          <th scope="row"><%= spirit.id %></th>
           <td><%= spirit.title %></td>
           <td><%= spirit.description %></td>
           <td>

@@ -21,6 +21,9 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 gem 'cancan', '~> 1.6', '>= 1.6.10'
 
+# Pagination
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

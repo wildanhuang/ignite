@@ -2,7 +2,9 @@ class SpiritChargesController < ApplicationController
   before_action :set_spirit_charge, only: [:edit, :update, :destroy]
 
   def index
-    @spirit_charges = SpiritCharge.all.order(created_at: :asc)
+    per_page = params[:page] || 1
+    @spirit_charges = SpiritCharge.where.not(id: current_user.readings.map(&:spirit_charge_id))
+      .order(created_at: :asc).page(per_page).per(30)
   end
 
   def new
