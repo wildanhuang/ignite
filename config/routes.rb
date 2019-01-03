@@ -12,5 +12,9 @@ Rails.application.routes.draw do
       end
   end
   resources :readings
-  resources :users
+  resources :users do
+    collection do
+      get :confirm
+    end
+  end
 end

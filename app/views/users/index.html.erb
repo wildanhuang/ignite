@@ -17,7 +17,7 @@
           <td>
             <!-- Some actions here -->
             <% if (can? :manage, User) && !user.confirmed? %>
-              <%= link_to edit_spirit_charge_path(user) do %>
+              <%= link_to confirm_users_path(id: user.id) do %>
                 <i class="fas fa-check-double"></i>
               <% end %>
             <% end %>
