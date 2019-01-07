@@ -1,3 +1,35 @@
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#reading_progress" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Readings Progress</a>
+</p>
+<div class="row">
+  <div class="col">
+    <div class="collapse multi-collapse" id="reading_progress">
+      <div class="card card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Title</th>
+              <th scope="col">Reader Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if can? :manage, SpiritCharge %>
+              <% @spirit_charges.each do |spirit| %>
+                <tr>
+                  <th scope="row"><%= spirit.id %></th>
+                  <td><%= spirit.title %></td>
+                  <td><%= "#{spirit.readings.size} reader(s) from #{@users.size}: #{(spirit.readings.size.to_f / @users.size.to_f) * 100}%" %></td>
+                </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
 <table class="table table-striped">
   <thead>
     <tr>
