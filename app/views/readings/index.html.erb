@@ -33,6 +33,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Title</th>
+      <th scope="col">Read Date</th>
     </tr>
   </thead>
   <tbody>
@@ -41,6 +42,7 @@
         <tr>
           <th scope="row"><%= index + 1 %></th>
           <td><%= read.spirit_charge.title %></td>
+          <td><%= (read.created_at + 7.hours).strftime('%d %b %Y - %H:%M WIB') %></td>
         </tr>
       <% end %>
     <% end %>
