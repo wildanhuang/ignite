@@ -13,6 +13,7 @@
 
 <div class="col-md-6">
   <%= form_for @survey, url: surveys_path, method: :post, :html => {:class => "form-horizontal"} do |f| %>
+    <%= f.hidden_field :user_id, value: (current_user.id rescue nil) %>
     <% if f.object.errors.any? %>
       <div class="alert alert-danger" role="alert">
         <%= f.object.errors.full_messages.join(", ") %>

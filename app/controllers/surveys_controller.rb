@@ -17,6 +17,6 @@ class SurveysController < ApplicationController
 
   private
     def survey_params
-      params.require(:survey).permit(:sex, :age, :read_bible, :porn, :porn_addict, :masturbate, :masturbate_addict, :sexual)
+      params.require(:survey).permit(:sex, :age, :read_bible, :porn, :porn_addict, :masturbate, :masturbate_addict, :sexual, :user_id)
     end
 end
