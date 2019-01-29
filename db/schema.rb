@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_28_045207) do
+ActiveRecord::Schema.define(version: 2019_01_29_025547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,19 @@ ActiveRecord::Schema.define(version: 2018_12_28_045207) do
   create_table "spirit_charges", force: :cascade do |t|
     t.string "title"
     t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.boolean "sex"
+    t.integer "age"
+    t.integer "read_bible"
+    t.boolean "porn"
+    t.boolean "porn_addict"
+    t.boolean "masturbate"
+    t.boolean "masturbate_addict"
+    t.boolean "sexual"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,130 @@
+<h1 class="display-4">
+  Surveys
+</h1>
+<div class="jumbotron">
+  <h1 class="display-4">
+    Holiness in Friendship
+  </h1>
+  <p class="lead">
+    Please take a survey! :)
+  </p>
+  <p>&nbsp;</p>
+</div>
+
+<div class="col-md-6">
+  <%= form_for @survey, url: surveys_path, method: :post, :html => {:class => "form-horizontal"} do |f| %>
+    <% if f.object.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <%= f.object.errors.full_messages.join(", ") %>
+      </div>
+    <% end %>
+
+    <div class="clearfix"></div>
+    <div class="form-group">
+      <label for="title">Jenis Kelamin</label>
+      <div class="clearfix"></div>
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :sex, 1, :checked => true, class: 'form-check-input' %>
+        <label class="form-check-label" for="sex">Pria</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :sex, 0, :checked => false, class: 'form-check-input' %>
+        <label class="form-check-label" for="sex">Wanita</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="title">Usia Anda</label>
+      <%= f.text_field :age, :class => "form-control", placeholder: 'Write your age here' %>
+      <small class="form-text text-muted">*example: 17</small>
+    </div>
+
+    <div class="form-group">
+      <label for="title">Seberapa sering anda membaca alkitab?</label>
+      <div class="clearfix"></div>
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :read_bible, 1, :checked => true, class: 'form-check-input' %>
+        <label class="form-check-label" for="read_bible">Setiap Hari</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :read_bible, 2, :checked => false, class: 'form-check-input' %>
+        <label class="form-check-label" for="read_bible">Kadang-kadang</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :read_bible, 3, :checked => false, class: 'form-check-input' %>
+        <label class="form-check-label" for="read_bible">Sangat jarang</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="title">Apakah anda pernah menonton video porno?</label>
+      <div class="clearfix"></div>
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :porn, 1, :checked => true, class: 'form-check-input' %>
+        <label class="form-check-label" for="porn">Pernah</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :porn, 0, :checked => false, class: 'form-check-input' %>
+        <label class="form-check-label" for="porn">Tidak Pernah</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="title">Apakah anda masih kecanduan menonton video porno sampai sekarang?</label>
+      <div class="clearfix"></div>
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :porn_addict, 1, :checked => false, class: 'form-check-input' %>
+        <label class="form-check-label" for="porn_addict">Masih</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :porn_addict, 0, :checked => false, class: 'form-check-input' %>
+        <label class="form-check-label" for="porn_addict">Tidak</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="title">Apakah anda penah melakukan onani atau masturbasi?</label>
+      <div class="clearfix"></div>
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :masturbate, 1, :checked => true, class: 'form-check-input' %>
+        <label class="form-check-label" for="masturbate">Pernah</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :masturbate, 0, :checked => false, class: 'form-check-input' %>
+        <label class="form-check-label" for="masturbate">Belum pernah</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="title">Apakah anda masih kecanduan melakukan onani atau masturbasi?</label>
+      <div class="clearfix"></div>
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :masturbate_addict, 1, :checked => false, class: 'form-check-input' %>
+        <label class="form-check-label" for="masturbate_addict">Masih</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :masturbate_addict, 0, :checked => false, class: 'form-check-input' %>
+        <label class="form-check-label" for="masturbate_addict">Tidak</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="title">Apakah anda pernah melakukan seks?</label>
+      <div class="clearfix"></div>
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :sexual, 1, :checked => true, class: 'form-check-input' %>
+        <label class="form-check-label" for="sexual">Pernah</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :sexual, 0, :checked => false, class: 'form-check-input' %>
+        <label class="form-check-label" for="sexual">Belum pernah</label>
+      </div>
+    </div>
+
+    <div class="form-group right">
+      <div class="col-sm-12">
+        <%= f.submit "Save Survey", :class => "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

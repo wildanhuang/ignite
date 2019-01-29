@@ -17,4 +17,6 @@ Rails.application.routes.draw do
       get :confirm
     end
   end
+
+  resources :surveys
 end
