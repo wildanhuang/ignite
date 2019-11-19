@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   end
 
   resources :surveys
+  resources :christmas_registrations
 end
