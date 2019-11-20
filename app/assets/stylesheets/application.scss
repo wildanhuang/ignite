@@ -23,6 +23,26 @@
   background-position: center 42%;
 }
 
+.snow-bg {
+  background-image: image-url('snow.jpg');
+  background-size: 100% auto;
+}
+
+.black-bg {
+  background-color: black;
+  color: #fedb97;
+  border-style: solid;
+  border-color: #fedb97;
+  border-radius: 0px;
+  border-width: thick;
+  text-align: center;
+
+}
+
+.white-bg {
+  background-color: white;
+}
+
 .white {
   color: white;
 }
