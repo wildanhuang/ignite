@@ -18,7 +18,11 @@ class ChristmasRegistrationsController < ApplicationController
   end
 
   def show
-    @winner = Participant.all.map(&:code).shuffle.first
+    if params[:winner].present?
+      @winner = Participant.all.map(&:code).shuffle.first
+    else
+      @winner = [].first
+    end
   end
 
   private
