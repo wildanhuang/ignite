@@ -17,6 +17,10 @@ class ChristmasRegistrationsController < ApplicationController
     end
   end
 
+  def show
+    @winner = Participant.all.map(&:code).shuffle.first
+  end
+
   private
     def participant_params
       params.require(:participant).permit(:name, :email, :line_id, :phone)
